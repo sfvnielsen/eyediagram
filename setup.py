@@ -39,7 +39,7 @@ ext = Extension("eyediagram._brescount",
 
 setup(name='eyediagram',
       version=get_eyediagram_version(),
-      author="Warren Weckesser",
+      author="Warren Weckesser and Søren Føns Nielsen",
       description="Tools for plotting an eye diagram.",
       license="BSD",
       classifiers=[
