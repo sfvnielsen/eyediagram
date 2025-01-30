@@ -4,11 +4,13 @@
 import os
 import sys
 import numpy
+from setuptools import setup, Extension
+from setuptools.command.build_ext import build_ext
 
 from distutils.core import setup
 from distutils.extension import Extension
 try:
-    from Cython.Distutils import build_ext
+    from Cython.Build import cythonize
 except ImportError:
     print("*** cython must be installed to build the eyediagram package. ***")
     print("setup aborted.")
@@ -48,7 +50,7 @@ setup(name='eyediagram',
           "Operating System :: OS Independent",
           "Programming Language :: Python, Cython",
       ],
-      ext_modules=[ext],
+      ext_modules=cythonize(ext),
       packages=['eyediagram'],
       cmdclass={'build_ext': build_ext},
       install_requires=[
