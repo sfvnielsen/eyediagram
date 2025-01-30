@@ -23,10 +23,5 @@ dependencies = [
     "scipy"
 ]
 
-[tool.setuptools]
-packages = ["eyediagram"]
-
-[tool.setuptools.extension]
-module = "eyediagram._brescount"
-sources = ["eyediagram/brescount.pyx"]
-include-dirs = ["{numpy.get_include()}"]
+[tool.setuptools.packages.find]
+where = ["."]
